@@ -1,0 +1,9 @@
+let BASE_URL = import.meta.env.VITE_FUNCTION_BASE_URL;
+
+const API_ENDPOINTS = {
+    SF_TO_BQ_SNOWFLAKE_CRAWLER: `${BASE_URL}/SF_TO_BQ_SNOWFLAKE_CRAWLER`,
+    SF_to_BQ_DATASETLEVEL:`${BASE_URL}/SF_to_BQ_Datasetlevel`
+
+};
+
+export default API_ENDPOINTS;

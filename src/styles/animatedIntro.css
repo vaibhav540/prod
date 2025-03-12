@@ -1,0 +1,63 @@
+.intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo {
+  width: 120px;
+  position: absolute;
+}
+
+.snowflake {
+  left: 46%;
+  transform: translateX(-50%);
+}
+
+.bigquery {
+  left: 46%;
+  transform: translateX(-50%);
+}
+.carousel-slide {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-content {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+  width: 100%;
+}
+
+.carousel-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.ant-carousel .slick-dots {
+  position: absolute;
+  bottom: 15px; 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ant-carousel .slick-dots li button {
+  background-color: #808080 !important; 
+  filter: brightness(1); 
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background-color: #0e0d0d !important;
+  filter: brightness(0.5); 
+}
+
+
+

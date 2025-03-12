@@ -1,0 +1,230 @@
+
+
+.login {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    padding: 20px 30px 20px 30px;
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 10px 50px rgb(96 68 121 / 10%);
+  }
+   .register {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    padding: 20px 30px 20px 30px;
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 10px 50px rgb(96 68 121 / 10%);
+    min-height: 490px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  .register  form{
+width: 100%;
+  }
+  .login img {
+    width: 96px;
+    margin: 0 0 32px;
+  }
+  
+  .login :is(h2, h3), .register :is(h2, h3) {
+    font-weight: 500;
+  }
+  
+  .login h2, .register h2 {
+    font-size: 18px;
+    margin: 0 0 6px;
+  }
+  
+  .login h3, .register h3 {
+    color: var(#ada5b4);
+    font-size: 13px;
+    margin: 0 0 32px;
+  }
+  .login form {
+    display: grid;
+    width: 100%;
+  }
+  
+  .login :is(input) {
+    height: 30px;
+    font-family: inherit;
+    font-size: 15px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 8px;
+  }
+
+  .login :is(button) {
+    height: 45px;
+    font-family: inherit;
+    font-size: 15px;
+    padding: 0 13px;
+    border: 0;
+    border-radius: 8px;
+  }
+  
+  .login .textbox {
+    position: relative;
+  }
+  
+  label,
+  input {
+    transition: 0.3s;
+  }
+  
+  .textbox label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    translate: 0 -50%;
+    transform-origin: 0 50%;
+    pointer-events: none;
+    color: var(#ada5b4);
+  }
+  
+  .textbox input {
+    width: 100%;
+    padding-top: 10px;
+    background: #f4f1f7;
+    outline: none;
+    color: inherit;
+    box-shadow: 0 0 0 2px transparent;
+  }
+  
+  .textbox input:focus {
+    box-shadow: 0 0 0 2px var(#7b00f1);
+  }
+  
+  .textbox input:is(:focus, :not(:invalid)) ~ label {
+    scale: 0.725;
+    translate: 0 -112%;
+  }
+  
+  .login button {
+    color: #f9f9f9;
+    background: var(#7b00f1);
+  }
+  
+  .login a {
+    font-size: 14px;
+    color: var(#7b00f1);
+  }
+  
+  .login p {
+    margin: 25px 0 0;
+    font-size: 14px;
+    color: var(#ada5b4);
+  }
+
+.login-page {
+  /* height: 90vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+  padding: 20px;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  display: flex !important; 
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.carousel-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  /* box-shadow: 0 10px 50px rgba(255, 255, 255, 1.5);  */
+  border-radius: 20px;
+  /* background-color: #0e0b4f0f; */
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 50px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  width: 400px;
+  color: white;
+}
+
+.snowflakes {
+  position: absolute;
+  top: -10px;
+  color: rgb(87, 128, 130);
+  font-size: 12px;
+  user-select: none;
+  animation: fall linear infinite;
+  opacity: 0;
+}
+:where(.css-dev-only-do-not-override-1v613y0).ant-form-item {
+  margin-bottom: 15px !important;
+}
+@keyframes fall {
+  0% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh);
+      opacity: 0;
+  }
+}
+
+.blob-left {
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  background: radial-gradient(circle, #F5CAC2 50%, #ED7966 100%);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: blobMove 6s infinite alternate ease-in-out;
+}
+
+.blob-right {
+  position: fixed;
+  bottom: 0%;
+  right: -9%;
+  width: 80vw;
+  max-width: 600px;
+  aspect-ratio: 1 / 1;
+  /* background: radial-gradient(circle, rgba(103,197,247,1) 50%, rgba(177,249,246,1) 100%); */
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: blobMove 8s infinite alternate ease-in-out;
+}
+
+
+@keyframes blobMove {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
