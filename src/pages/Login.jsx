@@ -294,7 +294,7 @@ const onFinish = async (values) => {
 
   return (
     <>
-      <canvas ref={canvasRef} style={{ position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", pointerEvents: "none" }} />;
+      <canvas ref={canvasRef} style={{ padding:0, position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", pointerEvents: "none" }} />;
       <div className="login-page">
         <div className="blob-left"></div>
         <div className="background-container">
@@ -303,7 +303,7 @@ const onFinish = async (values) => {
           </svg>
         </div>
         <Image
-          style={{ position: "fixed", top: "0px", left: "20px", height: "12%", width: "12%" }}
+          style={{ position: "fixed", top: "50px", left: "100px", height: "12%", width: "12%" }}
           src={AtgLogo}
         />
         <Row className="login-wrapper">

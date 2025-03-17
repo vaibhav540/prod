@@ -14,6 +14,9 @@
     text-align: center;
     box-shadow: 0 10px 50px rgb(96 68 121 / 10%);
   }
+  .ant-modal-content{
+    padding: 0 !important;
+  }
    .register {
     position: relative;
     z-index: 2;
@@ -194,7 +197,7 @@ width: 100%;
 }
 
 .blob-left {
-  position: fixed;
+  position: absolute;
   top: -10%;
   left: -10%;
   width: 50vw;
@@ -207,18 +210,16 @@ width: 100%;
 }
 
 .blob-right {
-  position: fixed;
+  position: absolute;
   bottom: 0%;
   right: -9%;
   width: 80vw;
   max-width: 600px;
   aspect-ratio: 1 / 1;
-  /* background: radial-gradient(circle, rgba(103,197,247,1) 50%, rgba(177,249,246,1) 100%); */
   border-radius: 50%;
   opacity: 0.6;
   animation: blobMove 8s infinite alternate ease-in-out;
 }
-
 
 @keyframes blobMove {
   0% {

@@ -1,17 +1,23 @@
 import bg1 from "../assets/bg1.webp";
 import bg2 from "../assets/bg2.webp";
-
-import React from "react";
-import { Button, Typography, Row, Col } from "antd";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Button, Typography, Row, Col, Modal } from "antd";
+import Login from "./Login"; // Make sure path is correct
 
 const { Title, Text } = Typography;
 
 const HomePage = () => {
-  const navigate = useNavigate()
-  const handlePath=()=>{
-    navigate("/login")
-  }
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+  
+
   return (
     <div style={styles.container}>
       {/* Navigation Bar */}
@@ -30,7 +36,7 @@ const HomePage = () => {
             of your data with minimal downtime.
           </Text>
           <br />
-          <Button type="primary" size="large" style={styles.button} onClick={handlePath}>
+          <Button type="primary" size="large" style={styles.button} onClick={showModal}>
             Start Migration
           </Button>
           <br />
@@ -47,20 +53,67 @@ const HomePage = () => {
           </div>
         </Col>
       </Row>
+
+      <Modal
+   title={null}
+   open={isModalVisible}
+   onCancel={handleCancel}
+   footer={null}
+   width="90vw"
+    bodyStyle={{
+        height: "90vh",
+        padding: 0,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",  // Added this to ensure blobs stay inside modal
+        overflow: "hidden",
+        borderRadius:"4px 4px 4px 4px ",
+
+    }}
+    style={{
+    borderRadius:"4px 4px 4px 4px ",
+      padding:0,
+        top: 0,
+        position: "relative", // Important to control blob positioning
+    }}
+    centered
+>
+    <div className="blob-left"></div>
+    <div className="blob-right"></div>
+    <Login isModal={true} onSuccess={handleCancel} redirectPath={location.state?.from}/>
+</Modal>
+
+
     </div>
   );
 };
 
-// Styles
+// Keep all existing styles exactly the same
 const styles = {
   container: {
+    overflow: "hidden",
     backgroundColor: "#fae5df",
     minHeight: "100vh",
-    padding: "5%",
+    height: "100vh",
+    boxSizing: "border-box",
+    padding: "5vw",
     textAlign: "left",
     fontFamily: "Arial, sans-serif",
-    height: "100vh",
   },
+  imageContainer: {
+    backgroundColor: "#f5cac2",
+    padding: "20px",
+    borderRadius: "60% 40% 60% 40%", 
+    boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.1)",
+    width: "100%",  
+    height: "40vh",   // More responsive height
+    backgroundImage: `url(${bg2})`,
+    backgroundSize: "cover",   
+    backgroundPosition: "center", 
+    backgroundRepeat: "no-repeat", 
+  },
+
   navbar: {
     display: "flex",
     justifyContent: "space-between",
@@ -116,8 +169,7 @@ const styles = {
     backgroundSize: "cover",   
     backgroundPosition: "center", 
     backgroundRepeat: "no-repeat", 
-  }
-,  
+  },
   image: {
     width: "100%",
     height: "auto",
